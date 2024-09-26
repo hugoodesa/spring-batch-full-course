@@ -1,7 +1,7 @@
-/*
 package br.com.stapassoli.spring_batch.config.topics;
 
 import br.com.stapassoli.spring_batch.entity.Cliente;
+import br.com.stapassoli.spring_batch.entityDois.User;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.orm.jpa.EntityManagerFactoryBuilder;
 import org.springframework.context.annotation.Bean;
@@ -19,7 +19,7 @@ import java.util.Objects;
 @Configuration
 @EnableTransactionManagement
 @EnableJpaRepositories(
-        basePackageClasses = Cliente.class,
+        basePackageClasses = User.class,
         entityManagerFactoryRef = "topicsEntityManagerFactory",
         transactionManagerRef = "topicsTransactionManager"
 )
@@ -31,8 +31,8 @@ public class TopicsJpaConfiguration {
             EntityManagerFactoryBuilder builder) {
         return builder
                 .dataSource(dataSource)
-                .packages("br.com.stapassoli.spring_batch.entity")
-                .persistenceUnit("db1")
+                .packages(User.class)
+                .persistenceUnit("db2")
                 .build();
     }
 
@@ -43,4 +43,3 @@ public class TopicsJpaConfiguration {
     }
 
 }
-*/

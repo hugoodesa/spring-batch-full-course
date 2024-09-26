@@ -29,7 +29,7 @@ public class DataBaseConfig {
     }
 
     //#b topics data source
-    /*@Bean(name = "topicsDataSourceProperties")
+    @Bean(name = "topicsDataSourceProperties")
     @ConfigurationProperties("spring.datasource.app")
     public DataSourceProperties topicsDataSourceProperties() {
         return new DataSourceProperties();
@@ -40,8 +40,7 @@ public class DataBaseConfig {
     public DataSource topicsDataSource() {
         return topicsDataSourceProperties()
                 .initializeDataSourceBuilder()
-                .driverClassName("org.postgresql.Driver")
                 .build();
-    }*/
+    }
 
 }
