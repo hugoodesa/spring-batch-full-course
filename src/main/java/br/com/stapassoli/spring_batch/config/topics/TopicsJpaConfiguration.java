@@ -19,7 +19,7 @@ import java.util.Objects;
 @Configuration
 @EnableTransactionManagement
 @EnableJpaRepositories(
-        basePackageClasses = User.class,
+        basePackageClasses = Cliente.class,
         entityManagerFactoryRef = "topicsEntityManagerFactory",
         transactionManagerRef = "topicsTransactionManager"
 )
@@ -31,7 +31,7 @@ public class TopicsJpaConfiguration {
             EntityManagerFactoryBuilder builder) {
         return builder
                 .dataSource(dataSource)
-                .packages(User.class)
+                .packages(Cliente.class)
                 .persistenceUnit("db2")
                 .build();
     }
