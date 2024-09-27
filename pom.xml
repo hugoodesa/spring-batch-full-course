@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>br.com.stapassoli</groupId>
-	<artifactId>multiple-datasource</artifactId>
+	<artifactId>spring-batch</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>spring-batch</name>
 	<description>learnSpringBatchUdemy</description>

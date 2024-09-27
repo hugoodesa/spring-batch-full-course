@@ -1,21 +1,15 @@
 package br.com.stapassoli.spring_batch.dbOne_entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 @ToString
-@Entity
+@Getter
+@Setter
 public class Cliente {
 
-    @Id
-    private Long id;
     private String nome;
     private String sobrenome;
     private String idade;
