@@ -1,7 +1,5 @@
 package br.com.stapassoli.spring_batch.config.todo;
 
-import br.com.stapassoli.spring_batch.entity.Cliente;
-import br.com.stapassoli.spring_batch.entityDois.User;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.orm.jpa.EntityManagerFactoryBuilder;
 import org.springframework.context.annotation.Bean;
@@ -19,7 +17,7 @@ import java.util.Objects;
 @Configuration
 @EnableTransactionManagement
 @EnableJpaRepositories(
-        basePackageClasses = User.class,
+        //basePackageClasses = MyUser.class,
         entityManagerFactoryRef = "todosEntityManagerFactory",
         transactionManagerRef = "todosTransactionManager"
 )
@@ -32,7 +30,7 @@ public class TodoJpaConfiguration {
             EntityManagerFactoryBuilder builder) {
         return builder
                 .dataSource(dataSource)
-                .packages(User.class)
+                .packages("br.com.stapassoli.spring_batch.dbOne_entity")
                 .persistenceUnit("db1")
                 .build();
     }

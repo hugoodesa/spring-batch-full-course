@@ -1,4 +1,4 @@
-package br.com.stapassoli.spring_batch.entity;
+package br.com.stapassoli.spring_batch.dbOne_entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
