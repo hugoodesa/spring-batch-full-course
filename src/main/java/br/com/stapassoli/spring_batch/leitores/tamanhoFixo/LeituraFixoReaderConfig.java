@@ -1,9 +1,8 @@
-package br.com.stapassoli.spring_batch.leitores.delimitado;
+package br.com.stapassoli.spring_batch.leitores.tamanhoFixo;
 
 import br.com.stapassoli.spring_batch.dbOne_entity.Cliente;
 import lombok.RequiredArgsConstructor;
 import org.springframework.batch.core.configuration.annotation.StepScope;
-import org.springframework.batch.item.ItemReader;
 import org.springframework.batch.item.file.FlatFileItemReader;
 import org.springframework.batch.item.file.builder.FlatFileItemReaderBuilder;
 import org.springframework.batch.item.file.transform.Range;
@@ -16,7 +15,7 @@ import java.net.MalformedURLException;
 
 @Configuration
 @RequiredArgsConstructor
-public class LeituraDelimitadoFixoReaderConfig {
+public class LeituraFixoReaderConfig {
 
     private final ResourceLoader resourceLoader;
 

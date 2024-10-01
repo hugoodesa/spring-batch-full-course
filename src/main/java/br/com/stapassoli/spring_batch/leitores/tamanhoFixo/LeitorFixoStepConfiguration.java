@@ -1,4 +1,4 @@
-package br.com.stapassoli.spring_batch.leitores.delimitado;
+package br.com.stapassoli.spring_batch.leitores.tamanhoFixo;
 
 import br.com.stapassoli.spring_batch.dbOne_entity.Cliente;
 import lombok.RequiredArgsConstructor;
@@ -12,15 +12,15 @@ import org.springframework.transaction.PlatformTransactionManager;
 
 @Configuration
 @RequiredArgsConstructor
-public class LeitorDelimitadoStepConfiguration {
+public class LeitorFixoStepConfiguration {
 
     private final JobRepository jobRepository;
     private final PlatformTransactionManager platformTransactionManager;
 
     @Bean
-    public Step leitorDelimitadoStep(ItemReader<Cliente> leituraAquivoLarguraFixaReader, ItemWriter<Cliente> escritaAquivoLarguraFixaReader) {
+    public Step leitorFixoStep(ItemReader<Cliente> leituraAquivoLarguraFixaReader, ItemWriter<Cliente> escritaAquivoLarguraFixaReader) {
         return new StepBuilder("leitorDelimitadoStep", jobRepository)
-                .<Cliente, Cliente>chunk(1, platformTransactionManager)
+                .<Cliente, Cliente>chunk(100, platformTransactionManager)
                 .reader(leituraAquivoLarguraFixaReader)
                 .writer(escritaAquivoLarguraFixaReader)
                 .build();
