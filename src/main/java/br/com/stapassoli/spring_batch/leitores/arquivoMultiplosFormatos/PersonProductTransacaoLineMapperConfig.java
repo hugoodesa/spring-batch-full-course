@@ -25,20 +25,18 @@ public class PersonProductTransacaoLineMapperConfig {
         Map<String, LineTokenizer> mappers = new HashMap<>();
 
         //PERSON
-        DefaultLineMapper<Person> personMapper = new DefaultLineMapper<>();
-        DelimitedLineTokenizer personTokenizer = new DelimitedLineTokenizer();
-        personTokenizer.setNames("name", "age");
-        personMapper.setLineTokenizer(personTokenizer);
-
-        BeanWrapperFieldSetMapper<Person> personFieldSetMapper = new BeanWrapperFieldSetMapper<>();
-        personFieldSetMapper.setTargetType(Person.class);
-        personMapper.setFieldSetMapper(personFieldSetMapper);
-        personTokenizer.setIncludedFields(1, 2);
-
-
-        mappers.put("1*", personTokenizer);
+        mappers.put("1*", personTokenizer());
 
         //PRODUCT
+        mappers.put("2*", productTokenizer());
+
+        lineMapper.setTokenizers(mappers);
+        lineMapper.setFieldSetMappers(fieldSetMappers());
+
+        return lineMapper;
+    }
+
+    private static DelimitedLineTokenizer productTokenizer() {
         DefaultLineMapper<Product> productMapper = new DefaultLineMapper<>();
         DelimitedLineTokenizer productTokenizer = new DelimitedLineTokenizer();
         productTokenizer.setNames("name", "quantity", "price");
@@ -48,13 +46,20 @@ public class PersonProductTransacaoLineMapperConfig {
         BeanWrapperFieldSetMapper<Product> productFieldSetMapper = new BeanWrapperFieldSetMapper<>();
         productFieldSetMapper.setTargetType(Product.class);
         productMapper.setFieldSetMapper(productFieldSetMapper);
+        return productTokenizer;
+    }
 
-        mappers.put("2*", productTokenizer);
+    private static DelimitedLineTokenizer personTokenizer() {
+        DefaultLineMapper<Person> personMapper = new DefaultLineMapper<>();
+        DelimitedLineTokenizer personTokenizer = new DelimitedLineTokenizer();
+        personTokenizer.setNames("name", "age");
+        personMapper.setLineTokenizer(personTokenizer);
 
-        lineMapper.setTokenizers(mappers);
-        lineMapper.setFieldSetMappers(fieldSetMappers());
-
-        return lineMapper;
+        BeanWrapperFieldSetMapper<Person> personFieldSetMapper = new BeanWrapperFieldSetMapper<>();
+        personFieldSetMapper.setTargetType(Person.class);
+        personMapper.setFieldSetMapper(personFieldSetMapper);
+        personTokenizer.setIncludedFields(1, 2);
+        return personTokenizer;
     }
 
     private Map<String, FieldSetMapper<Object>> fieldSetMappers(){
