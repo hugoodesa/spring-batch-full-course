@@ -1,2 +1,7 @@
 1,Antony,25
 2,Bicicle,1,3000
+2,Computer,1,5000
+2,VideoGame,1,3500
+1,Antony,25
+2,Car,1,30000
+2,Purse,1,50

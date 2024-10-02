@@ -2,7 +2,6 @@ package br.com.stapassoli.spring_batch.leitores.arquivoMultiplosFormatos;
 
 import br.com.stapassoli.spring_batch.leitores.arquivoMultiplosFormatos.domain.Person;
 import br.com.stapassoli.spring_batch.leitores.arquivoMultiplosFormatos.domain.Product;
-import org.springframework.batch.item.file.LineMapper;
 import org.springframework.batch.item.file.mapping.BeanWrapperFieldSetMapper;
 import org.springframework.batch.item.file.mapping.DefaultLineMapper;
 import org.springframework.batch.item.file.mapping.FieldSetMapper;
