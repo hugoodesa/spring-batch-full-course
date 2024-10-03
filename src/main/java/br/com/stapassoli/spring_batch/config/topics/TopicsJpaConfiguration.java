@@ -17,7 +17,7 @@ import java.util.Objects;
 @Configuration
 @EnableTransactionManagement
 @EnableJpaRepositories(
-        basePackageClasses = CarRepository.class,
+        basePackages = "br.com.stapassoli.spring_batch.dbTwo_entity",
         entityManagerFactoryRef = "topicsEntityManagerFactory",
         transactionManagerRef = "topicsTransactionManager"
 )
