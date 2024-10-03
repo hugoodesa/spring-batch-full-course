@@ -1,7 +1,5 @@
 package br.com.stapassoli.spring_batch.config.topics;
 
-import br.com.stapassoli.spring_batch.dbOne_entity.Cliente;
-import br.com.stapassoli.spring_batch.dbTwo_entity.CarRepository;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.orm.jpa.EntityManagerFactoryBuilder;
 import org.springframework.context.annotation.Bean;

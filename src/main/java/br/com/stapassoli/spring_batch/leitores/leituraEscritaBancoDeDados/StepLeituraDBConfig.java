@@ -1,7 +1,7 @@
 package br.com.stapassoli.spring_batch.leitores.leituraEscritaBancoDeDados;
 
 import br.com.stapassoli.spring_batch.dbTwo_entity.Car;
-import br.com.stapassoli.spring_batch.dbTwo_entity.CarRepository;
+import br.com.stapassoli.spring_batch.dbTwo_entity.repository.CarRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.repository.JobRepository;

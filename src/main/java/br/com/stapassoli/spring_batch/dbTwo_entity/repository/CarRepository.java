@@ -1,5 +1,6 @@
-package br.com.stapassoli.spring_batch.dbTwo_entity;
+package br.com.stapassoli.spring_batch.dbTwo_entity.repository;
 
+import br.com.stapassoli.spring_batch.dbTwo_entity.Car;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

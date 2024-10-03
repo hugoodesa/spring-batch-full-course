@@ -18,6 +18,7 @@ import java.util.Objects;
 @EnableTransactionManagement
 @EnableJpaRepositories(
         //basePackageClasses = MyUser.class,
+        basePackages = "br.com.stapassoli.spring_batch.dbOne_entity",
         entityManagerFactoryRef = "todosEntityManagerFactory",
         transactionManagerRef = "todosTransactionManager"
 )
