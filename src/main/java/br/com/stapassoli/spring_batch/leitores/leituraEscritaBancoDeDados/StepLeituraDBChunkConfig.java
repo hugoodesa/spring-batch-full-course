@@ -16,7 +16,7 @@ import java.util.List;
 
 @Configuration
 @RequiredArgsConstructor
-public class StepLeituraDBConfig {
+public class StepLeituraDBChunkConfig {
 
     private final JobRepository jobRepository;
     private final PlatformTransactionManager platformTransactionManager;

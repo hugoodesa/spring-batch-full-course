@@ -16,10 +16,21 @@ public class JobLeituraDBConfig {
 
     private final JobRepository jobRepository;
 
-    @Bean(name = "jobLeituraDB")
+    // SOMENTE LEITURA
+    /*@Bean(name = "jobLeituraDB")
     public Job jobLeituraDB(@Qualifier("stepLeituraDB") Step stepLeituraDB) {
         return new JobBuilder("jobLeituraDB", jobRepository)
                 .start(stepLeituraDB)
+                .incrementer(new RunIdIncrementer())
+                .build();
+    }*/
+
+    // ESCRITA E LEITURA
+    @Bean(name = "jobLeituraDB")
+    public Job jobLeituraDB(@Qualifier("stepLeituraDB") Step stepLeituraDB,@Qualifier("stepPersistenciaDBTasklet") Step stepPersistenciaDBTasklet) {
+        return new JobBuilder("jobLeituraDB", jobRepository)
+                .start(stepPersistenciaDBTasklet)
+                .next(stepLeituraDB)
                 .incrementer(new RunIdIncrementer())
                 .build();
     }
