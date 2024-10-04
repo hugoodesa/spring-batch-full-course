@@ -41,13 +41,13 @@ class PersistOnFromDbTasklet implements Tasklet {
 
     @Override
     public RepeatStatus execute(StepContribution contribution, ChunkContext chunkContext) throws Exception {
-        List<Car> cars = new ArrayList<>();
+        /*List<Car> cars = new ArrayList<>();
 
         for (int i = 0; i < 5; i++) {
             cars.add(Car.builder().nome(String.format("Car %d", i)).build());
         }
 
-        carRepository.saveAll(cars);
+        carRepository.saveAll(cars);*/
         return RepeatStatus.FINISHED;
     }
 
