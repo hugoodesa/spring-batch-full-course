@@ -22,12 +22,12 @@ public class ProcessadorStepConfig {
 
     @Bean
     public Step processadorStep(@Qualifier("processadorReader") FlatFileItemReader<Cliente> processadorReader,
-                                @Qualifier("processadorValidacaoCustomizado") ItemProcessor<Cliente, Cliente> processadorValidacaoCustomizado,
+                                @Qualifier("compositeItemProcessor") ItemProcessor<Cliente, Cliente> compositeItemProcessor,
                                 @Qualifier("processadorWriter") ItemWriter<Cliente> processadorWriter) {
         return new StepBuilder("processadorStep", jobRepository)
                 .<Cliente, Cliente>chunk(10, transactionManager)
                 .reader(processadorReader)
-                .processor(processadorValidacaoCustomizado)
+                .processor(compositeItemProcessor)
                 .writer(processadorWriter)
                 .build();
     }
