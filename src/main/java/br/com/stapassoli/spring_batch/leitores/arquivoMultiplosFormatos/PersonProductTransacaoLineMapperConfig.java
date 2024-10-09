@@ -18,7 +18,7 @@ import java.util.Map;
 public class PersonProductTransacaoLineMapperConfig {
 
     @Bean(name = "personProductTransacaoLineMapper")
-    public PatternMatchingCompositeLineMapper personProductTransacaoLineMapper() {
+    public PatternMatchingCompositeLineMapper<Object> personProductTransacaoLineMapper() {
 
         PatternMatchingCompositeLineMapper<Object> lineMapper = new PatternMatchingCompositeLineMapper<>();
         Map<String, LineTokenizer> mappers = new HashMap<>();
