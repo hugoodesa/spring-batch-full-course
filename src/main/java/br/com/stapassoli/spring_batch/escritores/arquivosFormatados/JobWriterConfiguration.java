@@ -17,10 +17,10 @@ public class JobWriterConfiguration {
     private final JobRepository jobRepository;
 
     @Bean
-    public Job jobWrite(@Qualifier("stepWriter") Step stepWriter) {
+    public Job jobWrite(@Qualifier("simpleStepWriter") Step simpleStepWriter) {
         return new JobBuilder("jobWrite",jobRepository)
                 .incrementer(new RunIdIncrementer())
-                .start(stepWriter)
+                .start(simpleStepWriter)
                 .build();
     }
 
