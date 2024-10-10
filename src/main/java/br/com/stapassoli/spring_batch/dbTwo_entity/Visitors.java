@@ -15,13 +15,13 @@ import java.util.Date;
 public class Visitors {
 
     //@Id
-    private Long id;
+    private String id;
     private String firstName;
     private String lastName;
     private String emailAddress;
     private String phoneNumber;
     private String address;
-    private Date visitDate;
+    //private Date visitDate;
 
     //@Transient
     private String strVisitDate;

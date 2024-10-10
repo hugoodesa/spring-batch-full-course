@@ -17,7 +17,7 @@ public class DelimitadoReaderConfig {
     @Value("classpath:files/visitors.csv")
     Resource visitorsFile;
 
-    @Bean
+    @Bean(name = "delimitadoReader")
     public FlatFileItemReader<Visitors> delimitadoReader(LineMapper<Visitors> delimitadorLineMapper){
         return new FlatFileItemReaderBuilder<Visitors>()
                 .name("delimitadoReader")
